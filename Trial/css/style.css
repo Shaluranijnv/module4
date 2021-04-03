@@ -498,7 +498,7 @@ color: #0e76a8;
        align-items: center;
    }
     #logo-img{
-        margin-left: 10px;
+        margin-left: 0;
          width: 95px;
          height: 80px;
          position: absolute;
