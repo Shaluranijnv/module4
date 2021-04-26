@@ -452,7 +452,7 @@ a .fa-youtube{
 }
 @media(max-width:767px){
     .home{
-        padding: 125px 0;
+        padding: 125px 0 80px;
         display: flex;
         flex-direction: column;
     }
