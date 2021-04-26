@@ -8,7 +8,7 @@ Fonts*****************
 /***********************
 global css*************/
 :root{
-    --main-color:#ffffff;
+    --main-color:#f4f4f4;
     --shadow:-7px -7px 20px 0px #fff9,
     -4px -4px 5px 0px #fff9,
     7px 7px 20px 0px #0002,
@@ -40,7 +40,7 @@ body{
     font-size: 16px;
     font-weight: 400;
     overflow-x: hidden;
-    background-color: rgb(240, 245, 244);
+    background-color: var(--main-color);
     line-height: 1.5;
     letter-spacing: 1px;
     box-sizing: border-box;
@@ -65,23 +65,20 @@ ul{
     border: none;
     border-radius: 5px;
     font-size: 16px;
-   
+   background-color:  var(--main-color);
    /* box-shadow: -3px -3px 7px #ffffff,
    3px 3px 5px #ceced1;
-*/
- box-shadow: -10px -10px 20px 0 rgba(255, 255, 255,0.6)
+*/ box-shadow: -10px -10px 20px 0 rgba(255, 255, 255,0.6)
  , 4px 4px 8px 0 rgba(70, 70, 70,0.12);
- 
-
-    transition: all 0.5s ease;
+   transition: all 0.5s ease;
     font-weight: 500;
     text-transform: capitalize;  
 }
 
-.btn-2:focus{
+.btn-2:focus,.CTA:focus{
     box-shadow: var(--shadow);
 }
-.btn-2:hover{
+.btn-2:hover,.CTA:hover{
   
     transition: all 0.5s ease;
     font-weight: 500;
@@ -95,12 +92,23 @@ ul{
 }
 .now{
     display: inherit;
+  
 }
-
+.CTA{
+    transition: all 0.5s ease;
+    box-shadow: -10px -10px 20px 0 rgba(255, 255, 255,1)
+ , 4px 4px 8px 0 rgba(70, 70, 70,0.5);
+    background-color: var(--secondary);
+    color: rgb(240, 245, 244);
+}
+.CTA:hover{
+    color: var(--secondary);
+    background-color:var(--main-color);
+}
 /************************
 Navbar********************/
 nav{
-    background-color: #ffffff;
+    background-color:var(--main-color);
 }
 nav.container-fluid{
     display: flex;
@@ -114,7 +122,7 @@ nav.container-fluid{
 }
 nav.container-fluid.navbar-shrink{
    
-   background-color: rgb(240, 245, 244);
+   background-color: var(--main-color);
 }
 #logo-img{
    margin-left: 40px;
@@ -133,34 +141,26 @@ nav.container-fluid.navbar-shrink{
 #togglebutton{
     display:none;
   }
-  .closebtn{
+  .closebtn,.closebtn:hover{
     display: none;
   }
 /*-----------------Home
 ----------- */
 .home{
-  
-    padding:160px 0;
+    padding:150px 0 160px;
+   
+}
+.home2{
+    padding:130px 0 160px;
    
 }
 .home-img{
-    box-shadow: 6px 6px 12px rgba(0,0,0,0.13),
-     -6px -6px 12px rgba(255, 255, 255, 1);
-    padding: 40px;
-   
+    text-align: center;
 }
-.home-img::before{
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    box-shadow: inset 6px 6px 12px rgba(0,0,0,0.13),
-    inset -6px -6px 12px rgba(255, 255, 255, 1);
-}
+
 .home-img img{
-    min-width: 300px;
-    width: 100%;
-   
+    min-width: 250px;
+    width: 90%;
 }
 .home-text h1{
     font-size: 45px;
@@ -177,36 +177,42 @@ font-weight: 400;
 }
 .home .home-btn{
     margin-top: 40px;
-   
+    
+    display: flex;
+    
+}
+ .app-ic{
+    float: none;
+    max-width: 190px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+  
 }
 .app-icon{
-    max-width: 140px;
+    max-width: 160px;
     width: 100%;
-    box-shadow: -10px -10px 20px 0 rgba(255, 255, 255,0.5)
+    box-shadow: -7px -7px 14px 0 rgba(255, 255, 255,0.5)
     , 4px 4px 8px 0 rgba(70, 70, 70,0.5);
     border-radius: 4px;
 }
 .app-icon:hover{
-    box-shadow: inset -10px -10px 20px 0 rgba(255, 255, 255,0.5)
+    box-shadow: inset -7px -7px 14px 0 rgba(255, 255, 255,0.5)
     ,inset  4px 4px 8px 0 rgba(70, 70, 70,0.5);
 }
-
-
-.home .home-btn .apple{
-    margin-left: 30px;
+#QR{
+    width: 110px;
+    box-shadow: -7px -7px 14px 0 rgba(255, 255, 255,0.7)
+    , 4px 4px 8px 0 rgba(0,0,0,0.3);
 }
-
-
-
-
-
-
-
+.apple{
+    margin-top: 10px;
+}
 
 /*------------------
 testimonial-----*/
 .testimonials{
-    background-color: rgb(240, 245, 244);
+    background-color: var(--main-color);
   
    
 }
@@ -315,7 +321,7 @@ box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
 /*----------------------
 How it works -------------*/
 ul.nav-list.second{
-    width: 30%;
+    width: 40%;
     
     justify-content: space-evenly;
 }
@@ -334,106 +340,133 @@ ul.app-features li{
     line-height: 24px;
     font-weight: 600;
 }
-/*-----------------------
+.home-text ul li{
+    font-size: 17px;
+    line-height: 34px;
+    font-weight: 500;
+    color: var(--secondary);
+}
+.how-it-works-body{
+    overflow-y: hidden;
+}
+/*------------------
+-----
 Footer--------------------*/
 .footer{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-   background-color:rgb(240, 245, 244);
-    display: flex;
-    justify-content: space-evenly;
+    background-color:transparent;
     align-items: center;
    padding: 13px 0;
    z-index: 100;
 
     
 }
-.footer .container{
-    margin: 10px;
+.social-media{
+    display: flex;   
+}
+.social-media a{
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    margin: 0 5px;
+    text-decoration: none;
+    background-color: rgb(240, 245, 244);
+    box-shadow: -6px -6px 10px -1px rgba(255,255,255,0.7)
+    , 6px 6px 10px -1px rgba(0,0,0,0.15);
+    transition: box-shadow 0.6 cubic-bezier(0.79,0.21,0.86,0.81);
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 
-.footer .container a i{
-   font-size: 20px;
-   padding: 10px;
-   border-radius: 50%;
-   
-   box-shadow: -10px -10px 15px rgba(255, 255, 255,0.7)
-   , 10px 10px 15px rgba(70, 70, 70,0.12);
-   background-color: rgb(240, 245, 244);
-transition: box-shadow 0.6 cubic-bezier(0.79,0.21,0.86,0.81);
-
-}
-.footer .container a:nth-child(1){
-    margin: 0;
+a .fa-whatsapp{
     color: #01e675;
 }
-.footer .container a:nth-child(2){
+a .fa-facebook{
 color: #3b5998;
 }
-.footer .container a:nth-child(6){
+a .fa-twitter{
 color: #00acee;
 }
-.footer .container a:nth-child(3){
+a .fa-linkedin{
 color: #0e76a8;
 }
-.footer .container a:nth-child(5){
+a .fa-youtube{
     color: #ee4056;
+ }
+ a .fa-instagram{
+    color: #f14843;
+ }
+ a .fa-envelope{
+    color: #8f8f8f;
  }
 
 
 
  /*-------------------------
- neumorphic boxes------------------*/
+ neumorphic boxes------------------
  .box1{
      position: absolute;
      top: -50px;
      right: -100px;
-     z-index: -1;
-     width: 60%;
+     z-index: -5;
+     width: 70%;
      height: 100%;
      box-sizing: border-box;
      border-radius: 50%;
-     box-shadow: 6px 6px 12px rgba(0,0,0,0.13),
-     -6px -6px 12px rgba(255, 255, 255, 1);
+     background-color:rgb(240, 245, 244);
+     box-shadow:inset 6px 6px 12px rgba(0,0,0,0.05),
+    inset -6px -6px 12px rgba(255, 255, 255, 1);
      overflow: hidden;
+    
  }
  .box1::before{
-    
     content: '';
     position: absolute;
     top: 10px;
     left: 10px;
     right: 10px;
     bottom: 10px;
+   
     border-radius: 50%;
+ }*/
+ .box1{
+     position: absolute;
+     background-repeat: no-repeat;
+     width: 100%;
+     height: 100vh;
+     top: 0;
+     left: 0;
+     z-index: -7;
+  
+    
  }
+ .box1 img{
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 100%;
+  
+    top: 0;
+    left: 0;
+    z-index: -7;
+   right: 0;
+   bottom: 0;
+}
  .box2{
     position: absolute;
-    bottom: 0;
-    right:70px;
-    z-index: -3;
-    width: 100px;
-    height: 100px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    box-shadow: 6px 6px 12px rgba(0,0,0,0.13),
-    -6px -6px 12px rgba(255, 255, 255, 1);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -7;
+    background-image: url(../img/wave_F4F4F4.png);
 }
-.box2::before{
-    content: '';
-    position: absolute;
-    z-index: -3;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    border-radius: 50%;
-    box-shadow: inset 6px 6px 12px rgba(0,0,0,0.13),
-    inset -6px -6px 12px rgba(255, 255, 255, 1);
-}
+
 .box3{
     position: absolute;
     top: 100px;
@@ -489,14 +522,37 @@ color: #0e76a8;
     .nav-list{
         width: 80%;
     }
+    .home-text ul li{
+        line-height: 28px;
+       
+    }
+    .home-img img{
+        width: 100%;
+        height: 100%;
+    }
 
 }
 @media(max-width:767px){
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    .home2 {
+        display: flex;
+        flex-direction: column;
+    }
    .home .home-btn{
        justify-content: center;
        display: flex;
        align-items: center;
+       margin-top: 40px;
    }
+   .home2 .home-btn{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
     #logo-img{
         margin-left: 10px;
          width: 95px;
@@ -548,7 +604,7 @@ color: #0e76a8;
       z-index: 1;
       top: 0;
       right: 0;
-      background-color:rgb(240, 245, 244);
+      background-color:var(--main-color);
       overflow-x: hidden;
       transition: 0.2s;
       padding-top: 60px;
@@ -557,27 +613,50 @@ color: #0e76a8;
     .home{
         padding: 120px 0 0;
     }
-    nav.container-fluid{
-       
-        height: 90px;
+    .home .home-btn{
+        justify-content: center;
+        display: flex;
     }
-   
+    .home2 .home-btn{
+        justify-content: center;
+        display: flex;
+    }
+    nav.container-fluid{
+      height: 90px;
+    }
     .sidenav li{
         padding: 20px ;
       }
      .sidenav a {
-     
         display: block;
         transition: 0.3s;
       }
     
     .sidenav .closebtn {
       position: absolute;
-      top: 15px;
+      top: 13px;
       right: 10px;
-      font-size: 36px;
+      font-size:40px;
       margin-left: 50px;
       display: inline;
+     box-sizing: border-box;
+     color: var(--primary);
+     text-decoration: none;
+  
+    
+    }
+    .section-padding{
+        padding: 60px 0 0;
+    }
+    .section-title h2{
+        font-size: 30px;
+        color: var(--primary);
+        font-weight: 500;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    .carousel{
+        margin: 10px auto 60px;
     }
     .app-features{
         align-items: center;
@@ -585,8 +664,18 @@ color: #0e76a8;
         flex-direction: column;
         justify-content: center;
     }
-    
-    
+    /* how it works *--------*/
+    .home-text ul{
+       text-align: center;
+    }
+    .how-it-works-body{
+        overflow-y: visible;
+      
+    }
+    .footer{
+        background-color: #f4f4f4;
+    }
+   
 }
 
 
