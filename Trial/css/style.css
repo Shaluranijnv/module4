@@ -155,12 +155,11 @@ nav.container-fluid.navbar-shrink{
    
 }
 .home-img{
-    text-align: center;
+    padding:0 0 0 30px;
 }
-
 .home-img img{
     min-width: 250px;
-    width: 90%;
+    width: 100%;
 }
 .home-text h1{
     font-size: 45px;
